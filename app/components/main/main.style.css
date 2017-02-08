@@ -1,0 +1,7 @@
+:root {
+  --color: red;
+}
+
+.container {
+  color: var(--color);
+}
