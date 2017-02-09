@@ -21,4 +21,6 @@ class PreviewController {
 
 }
 
+PreviewController.$inject = ['$scope'];
+
 export default PreviewController;
