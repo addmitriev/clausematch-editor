@@ -1,12 +1,8 @@
 class PreviewController {
   constructor ($scope) {
-
     $scope.$watch('preview.items', ()=> {
-      let items = this.items.sort((a,b) => a.order - b.order);
-
-      this.data = JSON.stringify({
-        data: items.map(i => i.text)
-      }, null, 2);
+      let data = this.items.sort((a,b) => a.order - b.order).map(i => i.text);
+      this.data = JSON.stringify({ data }, null, 2);
     }, true);
   }
 
@@ -17,7 +13,6 @@ class PreviewController {
     selection.removeAllRanges();
     selection.addRange(range);
   }
-
 }
 
 PreviewController.$inject = ['$scope'];

@@ -17,7 +17,6 @@ class TextboxItemController {
   saveItem(){
     this.save(this.model);
   }
-
 }
 
 TextboxItemController.$inject = [ 'Textboxes' ];
