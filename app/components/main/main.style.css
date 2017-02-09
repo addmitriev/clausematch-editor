@@ -23,6 +23,7 @@ main {
 
 .main-columns {
   display: flex;
+  flex-direction: row;
 }
 
 preview, textbox-list {
@@ -34,4 +35,14 @@ preview, textbox-list {
 
 preview, textbox-item, textbox-list {
   display: block;
+}
+
+@media screen and (max-width: 480px){
+  .main-columns {
+    flex-direction: column-reverse;
+  }
+
+  preview, textbox-list {
+    width: 100%;
+  }
 }
