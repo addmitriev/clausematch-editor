@@ -25,18 +25,8 @@ const loaders = [
     use: ExtractTextPlugin.extract({
       fallback: 'style-loader',
       use: [
-        {
-          loader: 'css-loader',
-          options: {
-            modules: true,
-            importLoaders: 1,
-            camelCase: true,
-            localIdentName: '[path]__[local]--[hash:base64:5]'
-          }
-        },
-        {
-          loader: 'postcss-loader'
-        }
+        { loader: 'css-loader', },
+        { loader: 'postcss-loader' }
       ]
     })
   }

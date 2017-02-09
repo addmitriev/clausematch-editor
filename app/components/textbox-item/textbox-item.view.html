@@ -1,4 +1,4 @@
-<div contenteditable="true" ng-model="tb.model.text" ng-class="tb.styles.field" ng-change="tb.saveItem()"></div>
-<div ng-click="tb.addItem()" ng-class="tb.styles.addBtn">+</div>
-<div ng-click="tb.removeItem()" ng-class="tb.styles.removeBtn" ng-if="!tb.isLast">&times;</div>
-<div sv-handle ng-class="tb.styles.drag">≡</div>
+<div contenteditable="true" ng-model="tb.model.text" class="field" ng-change="tb.saveItem()"></div>
+<div ng-click="tb.addItem()" class="btn-add">+</div>
+<div ng-click="tb.removeItem()" class="btn-remove" ng-if="!tb.isLast">&times;</div>
+<div sv-handle class="btn-drag">≡</div>

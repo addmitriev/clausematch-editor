@@ -8,20 +8,20 @@ main {
   background: #eee;
 }
 
-.container {
+.main-container {
   min-height: 100%;
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 }
 
-.title {
+.main-title {
   font-size: 26px;
   margin: 15px 0;
   padding-left: 10px;
 }
 
-.columns {
+.main-columns {
   display: flex;
 }
 

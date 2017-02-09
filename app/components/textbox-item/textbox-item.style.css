@@ -9,15 +9,15 @@ textbox-item {
   outline: none;
 }
 
-textbox-item:hover .remove-btn {
+textbox-item:hover .btn-remove {
   display: block;
 }
 
-textbox-item:hover .drag {
+textbox-item:hover .btn-drag {
   display: block;
 }
 
-.add-btn {
+.btn-add {
   position: absolute;
   cursor: pointer;
   left: 50%;
@@ -35,7 +35,7 @@ textbox-item:hover .drag {
   user-select: none;
 }
 
-.remove-btn {
+.btn-remove {
   display: none;
   position: absolute;
   cursor: pointer;
@@ -55,7 +55,7 @@ textbox-item:hover .drag {
   user-select: none;
 }
 
-.drag {
+.btn-drag {
   display: none;
   position: absolute;
   color: #fff;

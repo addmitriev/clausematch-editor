@@ -23,15 +23,7 @@ const loaders = [
     test: /\.css$/,
     use: [
       { loader: 'style-loader' },
-      {
-        loader: 'css-loader',
-        options: {
-          modules: true,
-          importLoaders: 1,
-          camelCase: true,
-          localIdentName: '[path]__[local]--[hash:base64:5]'
-        }
-      },
+      { loader: 'css-loader', },
       { loader: 'postcss-loader' }
     ]
   }

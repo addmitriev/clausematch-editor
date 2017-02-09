@@ -1,6 +1,5 @@
 import angular from 'angular';
 import UIRouter from 'angular-ui-router';
-
 import routes from './main.routes';
 import Services from './services';
 import ContentEditable from './directives/contenteditable';

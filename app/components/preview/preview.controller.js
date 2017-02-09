@@ -1,8 +1,5 @@
-import styles from './preview.style.css';
-
 class PreviewController {
   constructor ($scope) {
-    this.styles = styles;
 
     $scope.$watch('preview.items', ()=> {
       let items = this.items.sort((a,b) => a.order - b.order);

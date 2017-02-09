@@ -1,13 +1,13 @@
-<div ng-class="main.styles.container">
-  <div ng-class="main.styles.title">ClauseMatch editor</div>
-  <div ng-class="main.styles.columns" ng-if="main.textboxes.length">
+<div class="main-container">
+  <div class="main-title">ClauseMatch editor</div>
+  <div class="main-columns" ng-if="main.textboxes.length">
     <textbox-list items="main.textboxes"></textbox-list>
     <preview items="main.textboxes"></preview>
   </div>
-  <div ng-class="main.preloaderStyles.cssloadLoader" ng-if="!main.textboxes.length">
-    <div ng-class="[main.preloaderStyles.cssloadInner,main.preloaderStyles.cssloadOne]"></div>
-    <div ng-class="[main.preloaderStyles.cssloadInner,main.preloaderStyles.cssloadTwo]"></div>
-    <div ng-class="[main.preloaderStyles.cssloadInner,main.preloaderStyles.cssloadThree]"></div>
+  <div class="cssload-loader" ng-if="!main.textboxes.length">
+    <div class="cssload-inner cssload-one"></div>
+    <div class="cssload-inner cssload-two"></div>
+    <div class="cssload-inner cssload-three"></div>
   </div>
 </div>
 
