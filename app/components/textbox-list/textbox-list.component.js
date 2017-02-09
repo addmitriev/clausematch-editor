@@ -2,7 +2,7 @@ const TextboxList = {
   template: require('./textbox-list.view.html'),
   restrict: 'E',
   bindings: {
-    items: '='
+    items: '<'
   },
   controllerAs: 'tbList'
 };

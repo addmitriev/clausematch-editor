@@ -1,3 +1,11 @@
-text box list
-{{items}}
-<textbox-item ng-repeat="item in tbList.items"></textbox-item>
+<div sv-root
+     sv-part="tbList.items">
+  <textbox-item
+    ng-repeat="item in tbList.items track by item.id"
+    index="$index"
+    model="tbList.items[$index]"
+    is-last="tbList.items.length === 1"
+    sv-element
+  >
+  </textbox-item>
+</div>

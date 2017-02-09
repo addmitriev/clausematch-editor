@@ -1,4 +1,8 @@
 <div ng-class="main.styles.container">
-  <textbox-list items="[1,2,3,4,5]"></textbox-list>
-  <preview></preview>
+  <div ng-class="main.styles.title">ClauseMatch editor</div>
+  <div ng-class="main.styles.columns">
+    <textbox-list items="main.textboxes"></textbox-list>
+    <preview items="main.textboxes"></preview>
+  </div>
 </div>
+

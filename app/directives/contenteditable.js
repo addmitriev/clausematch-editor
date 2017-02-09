@@ -1,5 +1,4 @@
 const ContentEditable = ($parse) => {
-  'ngInject';
   return {
     restrict: 'A',
     require: '?ngModel',
@@ -17,5 +16,7 @@ const ContentEditable = ($parse) => {
     }
   }
 };
+
+ContentEditable.$inject = [ '$parse' ];
 
 export default ContentEditable;
