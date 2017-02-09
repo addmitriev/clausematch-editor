@@ -3,10 +3,13 @@ class TextboxListController {
     this.Textboxes = Textboxes;
   }
 
-  reorder ($indexFrom, $indexTo) {
-    let order = this.Textboxes.textboxes[$indexFrom].order;
-    this.Textboxes.textboxes[$indexFrom].order = this.Textboxes.textboxes[$indexTo].order;
-    this.Textboxes.textboxes[$indexTo].order = order;
+  reorder ($partTo) {
+    $partTo.forEach((item, index) => {
+      $partTo[index].order = index * 10;
+    });
+
+
+    this.Textboxes.textboxes = $partTo;
     this.Textboxes.saveAll();
   }
 
