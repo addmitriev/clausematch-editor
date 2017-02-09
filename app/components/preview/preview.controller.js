@@ -5,8 +5,10 @@ class PreviewController {
     this.styles = styles;
 
     $scope.$watch('preview.items', ()=> {
+      let items = this.items.sort((a,b) => a.order - b.order);
+
       this.data = JSON.stringify({
-        data: this.items.map(i => i.text)
+        data: items.map(i => i.text)
       }, null, 2);
     }, true);
   }
