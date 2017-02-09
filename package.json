@@ -13,7 +13,9 @@
   "dependencies": {
     "angular": "^1.6.2",
     "angular-sortable-view": "^0.0.15",
-    "angular-ui-router": "^1.0.0"
+    "angular-ui-router": "^1.0.0",
+    "angularfire": "^2.3.0",
+    "firebase": "^3.6.9"
   },
   "devDependencies": {
     "autoprefixer": "^6.7.2",

@@ -13,6 +13,11 @@ const ContentEditable = ($parse) => {
         let html = element.html();
         ngModel.$setViewValue(html);
       });
+
+      ngModel.$render = ()=> {
+        let html = ngModel.$viewValue || '';
+        element.html(html);
+      }
     }
   }
 };

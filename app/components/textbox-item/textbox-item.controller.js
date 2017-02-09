@@ -6,15 +6,21 @@ class TextboxItemController {
     this.Textboxes = Textboxes;
     this.add = this.Textboxes.addTextbox.bind(Textboxes);
     this.remove = this.Textboxes.removeTextbox.bind(Textboxes);
+    this.save = this.Textboxes.saveTextbox.bind(Textboxes);
   }
 
   removeItem () {
-    this.remove(this.index);
+    this.remove(this.model);
   }
 
   addItem () {
     this.add(this.index);
   }
+
+  saveItem(){
+    this.save(this.model);
+  }
+
 }
 
 TextboxItemController.$inject = [ 'Textboxes' ];

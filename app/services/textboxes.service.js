@@ -1,30 +1,47 @@
+import firebase from 'firebase';
+
 class Textboxes {
-  constructor () {
-    this.textboxes = [
-      {id: 2, text: "text 1"},
-      {id: 0, text: "text 2"},
-      {id: 1, text: "text 3"}
-    ];
+  constructor ($firebaseArray) {
+    let ref = firebase.database().ref().child("data");
+    this.ref = ref;
+    this.textboxes = $firebaseArray(ref);
+    this.textboxes.$loaded().then(()=>{
+      if (this.textboxes.length === 0) {
+        this.textboxes.$add({ text: 'type here', order: 0 });
+      }
+    });
   }
 
-  getTextboxes(){
+  getTextboxes () {
     return this.textboxes;
   }
 
-  getTextbox(index){
-    return this.textboxes[index];
-  }
-
   addTextbox(index){
-    let id = Math.max.apply(null, this.textboxes.map(i => i.id)) + 1;
-    this.textboxes.splice(index + 1, 0, {id, text: ''});
+    let order = parseInt(this.textboxes[index].order, 10) + 1;
+    this.textboxes.$add({text: '', order}).then(()=>{
+      this.saveAll();
+    });
   }
 
-  removeTextbox(index){
-    if (this.textboxes.length > 1){
-      this.textboxes.splice(index, 1);
+  removeTextbox (item) {
+    if (this.textboxes.length > 1) {
+      this.textboxes.$remove(item);
     }
   }
+
+  saveTextbox (item) {
+    this.textboxes.$save(item);
+  }
+
+  saveAll(){
+    this.textboxes.sort((a,b) => a.order - b.order ).forEach((item, index)=>{
+      item.order = index * 10;
+      this.textboxes.$save(item);
+    });
+  }
+
 }
+
+Textboxes.$inject = [ '$firebaseArray' ];
 
 export default Textboxes;

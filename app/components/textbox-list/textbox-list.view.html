@@ -1,9 +1,9 @@
 <div sv-root
-     sv-part="tbList.items">
+     sv-part="tbList.items" ng-if="tbList.items" sv-on-sort="tbList.reorder($indexFrom, $indexTo)">
   <textbox-item
-    ng-repeat="item in tbList.items track by item.id"
+    ng-repeat="item in tbList.items | orderBy: 'order'"
     index="$index"
-    model="tbList.items[$index]"
+    model="item"
     is-last="tbList.items.length === 1"
     sv-element
   >
